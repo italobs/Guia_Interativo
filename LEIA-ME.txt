@@ -1,0 +1,60 @@
+GUIA INTERATIVO PARMÊNIDES - VERSÃO PWA
+
+O QUE É UMA PWA?
+
+Uma PWA é um site preparado para se comportar como aplicativo. O conteúdo
+continua sendo escrito em HTML, CSS e JavaScript, mas o navegador passa a
+reconhecer que ele pode ser instalado.
+
+PARA QUE SERVE CADA ARQUIVO?
+
+index.html
+É o guia. Foram acrescentadas apenas as ligações com o manifesto, os ícones e
+o service worker.
+
+manifest.webmanifest
+É a ficha de identificação do aplicativo. Contém nome, descrição, cores,
+endereço inicial e ícones.
+
+service-worker.js
+É um auxiliar executado pelo navegador. Ele guarda arquivos no dispositivo e
+permite abrir a estrutura básica quando a conexão falha.
+
+icon-192.png e icon-512.png
+São os ícones comuns do aplicativo.
+
+icon-maskable-512.png
+É o ícone com margem de segurança usado pelo Android em formatos diferentes,
+como círculo e quadrado arredondado.
+
+COMO PUBLICAR
+
+1. Coloque todos os arquivos desta pasta na raiz do repositório do GitHub.
+2. Confirme que o arquivo principal se chama index.html.
+3. Aguarde o GitHub Pages atualizar.
+4. Abra o endereço publicado do guia.
+5. Use esse endereço no PWABuilder.
+
+ATENÇÃO AO FUNCIONAMENTO OFFLINE
+
+Esta versão é uma PWA instalável, mas seu funcionamento offline é parcial.
+O index.html atual carrega arquivos CSS, JavaScript, imagens e jogos de outros
+endereços, incluindo ibmxu.github.io, cdnjs.cloudflare.com e imgur.com.
+O service worker pode guardar alguns deles depois que forem acessados, mas não
+há garantia de que todas as atividades externas funcionarão sem internet.
+
+Para uma versão totalmente offline, será necessário colocar CSS, JavaScript,
+imagens, jogos e atividades dentro do próprio repositório e trocar os links
+externos por caminhos locais.
+
+COMO ATUALIZAR O CACHE
+
+Quando fizer uma alteração importante, abra service-worker.js e troque:
+
+parmenides-pwa-v1
+
+por:
+
+parmenides-pwa-v2
+
+Na atualização seguinte, use v3, depois v4 e assim por diante.

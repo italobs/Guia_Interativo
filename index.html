@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#006B4F">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="icon-192.png">
     <title>Guia Digital de Ciências</title>
     
     <!-- API- Animação de Partículas -->
@@ -1663,6 +1670,17 @@
 <script src="https://ibmxu.github.io/guia/sumario.js"></script>
 <script src="https://ibmxu.github.io/guia/jsteste/navegaID.js"></script>
 <script src="https://ibmxu.github.io/guia/scriptvideo.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./service-worker.js')
+            .catch(function (erro) {
+                console.error('Não foi possível registrar o service worker:', erro);
+            });
+    });
+}
+</script>
 
 </body>
 </html>
